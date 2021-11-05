@@ -1,0 +1,117 @@
+/* 
+Theme Name:    mit tema
+Template:    nokke
+Version:      1.0.3
+Description:  Nokke Child Theme
+Author:      Gruppe 12
+*/
+
+.page-title {
+  display: none;
+}
+
+.liste-titel {
+  font-size: 20px;
+  font-weight: 700px;
+}
+
+p {
+  line-height: 2.5;
+  color: black;
+}
+
+#liste {
+  background-color: #f7f7f7;
+  padding: 10px;
+  text-align: center;
+}
+
+#kursus h2 {
+  padding: 20px;
+}
+
+#filtrering {
+  margin: 0 auto;
+  text-align: center;
+}
+
+button.filter {
+  padding: 15px;
+  border-style: solid;
+  border-color: #bfa67a;
+}
+
+.retcontainer {
+  gap: 10px;
+  cursor: pointer;
+}
+
+.klassetrin {
+  font-size: 1.4rem;
+}
+
+.fag {
+  font-weight: 500;
+}
+
+@media (min-width: 750px) {
+  .retcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+
+  #liste img {
+    width: 363.33px;
+    height: 242.15px;
+    text-align: center;
+  }
+  #filtrering {
+    display: flex;
+    gap: 15px;
+  }
+
+  .ret-container {
+    padding: 30px;
+  }
+}
+
+.tilbageknap {
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  font-weight: 700;
+}
+
+#kursus h2 {
+  text-align: center;
+}
+
+.info-box {
+  margin: 0 auto;
+  width: 350px;
+  height: auto;
+  padding: 0px;
+  text-align: center;
+}
+
+.beskrivelse2 {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+@media (min-width: 750px) {
+  .kursus-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer {
+  background-color: #f7f7f7;
+}
+
+.footer p {
+  line-height: 1.7;
+}

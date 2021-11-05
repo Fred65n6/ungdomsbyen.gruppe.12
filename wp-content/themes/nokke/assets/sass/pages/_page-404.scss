@@ -1,0 +1,46 @@
+/*-------------------------------------------------------*/
+/* Page 404
+/*-------------------------------------------------------*/
+.page-404 {
+	position: relative;
+
+	&-section {
+		padding: 80px 0 120px;
+
+		@include bp-lg-up {
+			padding: 200px 0;
+		}
+	}
+
+	&__title {
+		font-size: 2rem;
+
+		@include bp-lg-up {
+			font-size: 4.125rem;
+		}
+	}
+
+	&__text {
+		font-size: 1.5rem;
+		color: $text-color--light;
+	}
+
+	&__number {
+		pointer-events: none;
+		position: absolute;
+		line-height: 1;
+		font-size: 16rem;
+		letter-spacing: -2px;
+		font-weight: normal;
+		color: $text-color;
+		opacity: 0.05;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include bp-xl-up {
+			top: -60%;
+			font-size: 23.75rem;
+		}
+	}
+}

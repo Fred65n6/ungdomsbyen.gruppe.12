@@ -1,0 +1,103 @@
+/*
+Theme Name: Nokke
+Theme URI: https://deothemes.com/wordpress-themes/nokke-minimal-agency-elementor-wordpress-theme/
+Author: DeoThemes
+Author URI: https://deothemes.com
+Description: Nokke is a minimal agency Elementor WordPress theme. This minimalist WordPress theme is perfect for agencies, portfolio, personal websites, and online stores. Nokke is a beautifully crafted Elementor WordPress Theme that has been crafted to be a fully fledged site building tool. It comes packed with a number of home page layouts, header, footer, mega menu and product builder. All this allows you to create a stunning site in minutes, using the powerful drag and drop Elementor page builder. Open the door to possibilities. Nokke is a sleek, minimal theme with all the functionality you need to set up an agency website. Choose your own colour scheme, make use of custom widgets, and impress your clients with smooth animations. A powerful customizer panel gives you control over all of Nokke's features. A must-have for any agency! This is a very simple way to create your own home page layout with image slider, video background, promo sections, pricing table, call to action button, contact form, social media and many others. Thanks to Elementor page builder it lets you easily manage the overall appearance of your site and create pages that perfectly match your business goals and target audience preferences. The perfect combination of simplicity, elegance and professionalism in one unique design. Nokke's clean yet lively appearance creates trust with your customers. You can present your products in an eye-catching way, with great emphasis on the important details. So what are your waiting for? Grab the Nokke WordPress theme and start building professional websites today!
+Version: 1.0.1
+Tested up to: 5.8
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: nokke
+Tags: blog, portfolio, e-commerce, translation-ready, theme-options, grid-layout, left-sidebar, right-sidebar, custom-colors, custom-background, custom-logo, footer-widgets, featured-images, custom-menu, block-styles, wide-blocks, rtl-language-support
+
+@fs_premium_only /assets/js/vendor/cookieconsent.js, /assets/js/vendor/min/cookieconsent.min.js, /assets/js/cookies.js, /includes/customizer/modules/socials.php, /includes/customizer/modules/gdpr.php, /includes/plugins/, /includes/demo-import/, /includes/child-theme/, /assets/css/compatibility/, /includes/compatibility/woocommerce/, /woocommerce/ 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*-------------------------------------------------------*/
+/* Table of Content
+
+1.General
+  1.1.Typography
+  1.2.Grid
+2.Common Elements
+3.Layout
+4.Blog
+5.Navigation
+6.Footer
+7.Helper CLasses
+8.WordPress styles
+9.Gutenberg
+10.Widgets
+
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/* Bootstrap Grid
+/*-------------------------------------------------------*/
+@import "_bootstrap.scss";
+
+/*-------------------------------------------------------*/
+/* General
+/*-------------------------------------------------------*/
+::-moz-selection {
+	color: #333;
+	background: #fbedc4;
+}
+::-webkit-selection {
+	color: #333;
+	background: #fbedc4;
+}
+::selection {
+	color: #333;
+	background: #fbedc4;
+}
+
+a {
+	transition: color 0.1s ease-in-out;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $body-font;
+	font-size: 16px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	background: #fff;
+	outline: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	color: $text-color;
+
+	img {
+		border: none;
+		max-width: 100%;
+		user-select: none;
+	}
+}
+
+video {
+	width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
+figcaption {
+	font-size: 0.8125rem;
+	margin-top: 16px;
+	color: $meta-color;
+	text-align: center;
+}

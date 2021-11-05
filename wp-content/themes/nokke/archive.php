@@ -1,0 +1,46 @@
+<?php
+/**
+ * The template for displaying archive pages.
+ *
+ * @package Nokke
+ */
+
+get_header();
+?>
+
+<?php
+	// Page Title
+	get_template_part( 'template-parts/page-title/page-title-archive' );
+?>
+
+<div class="archive-section pb-56">
+	<div class="container">
+		<div class="row">
+
+			<?php nokke_primary_content_top(); ?>
+
+			<div id="primary" class="content blog__content mb-32 col-lg">
+				<main class="site-main">
+
+					<?php nokke_primary_content_before(); ?>
+
+					<?php nokke_primary_content_query(); ?>
+
+					<?php nokke_post_pagination(); ?>
+
+					<?php nokke_primary_content_after(); ?>
+
+				</main>
+			</div> <!-- #primary -->
+
+			<?php
+				// Sidebar
+				if ( 'fullwidth' !== nokke_layout_type( 'archive', 'fullwidth' ) && is_active_sidebar( 'nokke-blog-sidebar' ) ) {
+					nokke_sidebar();
+				}
+			?>	
+
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</div>
+<?php get_footer();  ?>
