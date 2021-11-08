@@ -71,7 +71,7 @@ Vi kommer omkring de mest brugte LGBT-begreber og livsførelser blandt regnbuefa
 
       let elementer;
       let categories;
-      let filterElement = "45"
+      let filterElement = "50"
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
       const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
@@ -84,32 +84,7 @@ Vi kommer omkring de mest brugte LGBT-begreber og livsførelser blandt regnbuefa
         categories = await catdata.json();
         console.log(categories);
         visElementer();
-        opretknapper();
       }
-
-      function opretknapper () {
-
-        categories.forEach(cat => {
-          document.querySelector("#filtrering").innerHTML += `<button class="filter" data-element="${cat.id}">${cat.name}</button>`
-        })
-
-        addEventListenersToButtons () 
-      }
-
-      function  addEventListenersToButtons () {
-        document.querySelectorAll("#filtrering button").forEach(elm => {
-          elm.addEventListener("click", filtrering);
-        })
-      };
-
-      
-      function filtrering() {
-        filterElement = this.dataset.element;
-        console.log(filterElement);
-
-        visElementer();
-      }
-
 
 
       function visElementer() {
@@ -117,7 +92,7 @@ Vi kommer omkring de mest brugte LGBT-begreber og livsførelser blandt regnbuefa
         let container = document.querySelector(".elementcontainer")
         container.innerHTML = "";
         elementer.forEach(element => {
-          if ( filterElement == "uddanelsesvalg" || element.categories.includes(parseInt(filterElement))){
+          if ( filterElement == "uddanelsesvalg" || element.tema.includes(parseInt(filterElement))){
           let klon = temp.cloneNode(true).content;
           klon.querySelector("h2").innerHTML = element.title.rendered;
           klon.querySelector("img").src = element.billede.guid;

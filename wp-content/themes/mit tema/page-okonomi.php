@@ -67,7 +67,7 @@ De skal på kurset gennem et detaljeret brætspil om uddannelse, økonomisk forb
 
       let elementer;
       let categories;
-      let filterElement = "42"
+      let filterElement = "49"
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
       const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
@@ -80,40 +80,15 @@ De skal på kurset gennem et detaljeret brætspil om uddannelse, økonomisk forb
         categories = await catdata.json();
         console.log(categories);
         visElementer();
-        opretknapper();
+  
       }
-
-      function opretknapper () {
-
-        categories.forEach(cat => {
-          document.querySelector("#filtrering").innerHTML += `<button class="filter" data-element="${cat.id}">${cat.name}</button>`
-        })
-
-        addEventListenersToButtons () 
-      }
-
-      function  addEventListenersToButtons () {
-        document.querySelectorAll("#filtrering button").forEach(elm => {
-          elm.addEventListener("click", filtrering);
-        })
-      };
-
-      
-      function filtrering() {
-        filterElement = this.dataset.element;
-        console.log(filterElement);
-
-        visElementer();
-      }
-
-
 
       function visElementer() {
         let temp = document.querySelector("template");
         let container = document.querySelector(".elementcontainer")
         container.innerHTML = "";
         elementer.forEach(element => {
-          if ( filterElement == "uddanelsesvalg" || element.categories.includes(parseInt(filterElement))){
+          if ( filterElement == "uddanelsesvalg" || element.tema.includes(parseInt(filterElement))){
           let klon = temp.cloneNode(true).content;
           klon.querySelector("h2").innerHTML = element.title.rendered;
           klon.querySelector("img").src = element.billede.guid;

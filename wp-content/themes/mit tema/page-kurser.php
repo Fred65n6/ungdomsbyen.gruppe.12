@@ -97,6 +97,7 @@ get_header();
         console.log(temaer);
         visElementer();
         opretknapper();
+
       }
 
       function opretknapper () {
@@ -105,22 +106,26 @@ get_header();
           document.querySelector("#filtrering").innerHTML += `<button class="filter" data-element="${cat.id}">${cat.name}</button>`
         })
 
-        temaer.forEach(tem => {
+          temaer.forEach(tem => {
           document.querySelector("#filtrering2").innerHTML += `<button class="filter2" data-element="${tem.id}">${tem.name}</button>`
         })
 
         addEventListenersToButtons () 
       }
 
+ 
+
       function  addEventListenersToButtons () {
         document.querySelectorAll("#filtrering button, #filtrering2 button").forEach(elm => {
           elm.addEventListener("click", filtrering);
         })
 
-        // document.querySelectorAll("#filtrering2 button").forEach(elm => {
-        //   elm.addEventListener("click", filtrering);
-        // })
+        document.querySelectorAll("#filtrering2 button").forEach(elm => {
+         elm.addEventListener("click", filtrering2);
+        })
       };
+
+  
 
       
       function filtrering() {
@@ -130,12 +135,12 @@ get_header();
         visElementer();
       }
 
-      // function filtrering2() {
-      //   filterElement2 = this.dataset.element;
-      //   console.log(filterElement2);
+      function filtrering2() {
+      filterElement2 = this.dataset.element;
+      console.log(filterElement);
 
-      //   visElementer();
-      // }
+      visElementer2();
+      }
 
 
       function visElementer() {
@@ -156,6 +161,25 @@ get_header();
           })
         }
 
+
+   function visElementer2() {
+        let temp = document.querySelector("template");
+        let container = document.querySelector(".elementcontainer");
+        container.innerHTML = "";
+        elementer.forEach(element => {
+        if ( filterElement == "alle" || element.tema.includes(parseInt(filterElement))){
+
+          let klon = temp.cloneNode(true).content;
+          klon.querySelector("h2").innerHTML = element.title.rendered;
+          klon.querySelector("img").src = element.billede.guid;
+          klon.querySelector(".kortbeskrivelse").innerHTML = element.kortbeskrivelse;
+          klon.querySelector(".klassetrin").innerHTML = "👨‍👦‍👦: " + element.klassetrin;
+          klon.querySelector(".fag").innerHTML = "📖: " + element.fag;
+          klon.querySelector(".læs-mere-knap").addEventListener("click", () => { location.href = element.link; })
+          container.appendChild(klon);
+           }
+          })
+        }
 getJson();
 
 
