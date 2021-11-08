@@ -76,7 +76,7 @@ Hvordan ser elevernes digitale vaner ud? Hvilke problematikker opstår der i der
       let filterElement = "41"
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
-      const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/categories?per_page=100";
+      const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
 
 
       async function getJson() {

@@ -44,6 +44,7 @@ get_header();
 
 <main class="site-main">
 
+
 <section>
 <h1>Konflikthåndtering</h1>
 <br>

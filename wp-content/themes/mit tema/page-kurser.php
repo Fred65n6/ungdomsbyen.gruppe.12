@@ -45,18 +45,26 @@ get_header();
 <main class="site-main">
 
 <div class="kursus-billede">
-  
+
 </div>
 
-<div class="kursus-text">
+<div id="kursus-text">
 <h1>Book kurser</h1>
 <p>Se vores store udvalg af forskellige kurser her, og gå ind og læs nærmere om hvert kursus.</p>
 </div>
 
-<div id="dropdown-1" class="dropdown">
-  <button class="dropbtn">Kategorier ▼</button>
+<div id="dropdown" class="dropdown">
+  <button class="dropbtn" class="filter">Målgruppe ▼</button>
   <div class="dropdown-content">
   <nav id="filtrering">
+  </nav>
+  </div>
+</div>
+
+<div id="dropdown" class="dropdown">
+  <button class="dropbtn" class="filter2">Temaer ▼</button>
+  <div class="dropdown-content">
+  <nav id="filtrering2">
   </nav>
   </div>
 </div>
@@ -65,22 +73,28 @@ get_header();
 
 </main>
 
+</div>
 <script>
 
       let elementer;
       let categories;
+      let temaer;
       let filterElement = "alle";
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
       const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/categories?per_page=100";
+      const temUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
 
 
       async function getJson() {
         const data = await fetch(url);
         const catdata = await fetch(catUrl);
+        const temdata = await fetch(temUrl);
         elementer = await data.json();
         categories = await catdata.json();
+        temaer = await temdata.json();
         console.log(categories);
+        console.log(temaer);
         visElementer();
         opretknapper();
       }
@@ -91,13 +105,21 @@ get_header();
           document.querySelector("#filtrering").innerHTML += `<button class="filter" data-element="${cat.id}">${cat.name}</button>`
         })
 
+        temaer.forEach(tem => {
+          document.querySelector("#filtrering2").innerHTML += `<button class="filter2" data-element="${tem.id}">${tem.name}</button>`
+        })
+
         addEventListenersToButtons () 
       }
 
       function  addEventListenersToButtons () {
-        document.querySelectorAll("#filtrering button").forEach(elm => {
+        document.querySelectorAll("#filtrering button, #filtrering2 button").forEach(elm => {
           elm.addEventListener("click", filtrering);
         })
+
+        // document.querySelectorAll("#filtrering2 button").forEach(elm => {
+        //   elm.addEventListener("click", filtrering);
+        // })
       };
 
       
@@ -108,23 +130,29 @@ get_header();
         visElementer();
       }
 
+      // function filtrering2() {
+      //   filterElement2 = this.dataset.element;
+      //   console.log(filterElement2);
+
+      //   visElementer();
+      // }
 
 
       function visElementer() {
         let temp = document.querySelector("template");
-        let container = document.querySelector(".elementcontainer")
+        let container = document.querySelector(".elementcontainer");
         container.innerHTML = "";
         elementer.forEach(element => {
-          if ( filterElement == "alle" || element.categories.includes(parseInt(filterElement))){
+        if ( filterElement == "alle" || element.categories.includes(parseInt(filterElement))){
           let klon = temp.cloneNode(true).content;
           klon.querySelector("h2").innerHTML = element.title.rendered;
           klon.querySelector("img").src = element.billede.guid;
           klon.querySelector(".kortbeskrivelse").innerHTML = element.kortbeskrivelse;
           klon.querySelector(".klassetrin").innerHTML = "👨‍👦‍👦: " + element.klassetrin;
           klon.querySelector(".fag").innerHTML = "📖: " + element.fag;
-          klon.querySelector("article").addEventListener("click", () => { location.href = element.link; })
+          klon.querySelector(".læs-mere-knap").addEventListener("click", () => { location.href = element.link; })
           container.appendChild(klon);
-          }
+           }
           })
         }
 

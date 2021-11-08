@@ -74,7 +74,7 @@ Vi kommer omkring de mest brugte LGBT-begreber og livsførelser blandt regnbuefa
       let filterElement = "45"
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
-      const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/categories?per_page=100";
+      const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
 
 
       async function getJson() {

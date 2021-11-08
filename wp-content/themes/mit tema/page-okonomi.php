@@ -70,7 +70,7 @@ De skal på kurset gennem et detaljeret brætspil om uddannelse, økonomisk forb
       let filterElement = "42"
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
-      const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/categories?per_page=100";
+      const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
 
 
       async function getJson() {

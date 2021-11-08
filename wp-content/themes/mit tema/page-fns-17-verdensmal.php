@@ -76,7 +76,7 @@ Lærere har utrolig mange opgaver på deres bord i det dannelsesforløb, som fin
 
       let elementer;
       let categories;
-      let filterElement = "38"
+      let filterElement = "53"
      
       const url = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kursus?per_page=100";
       const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/categories?per_page=100";
