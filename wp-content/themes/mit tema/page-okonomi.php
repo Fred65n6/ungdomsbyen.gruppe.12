@@ -91,7 +91,7 @@ De skal på kurset gennem et detaljeret brætspil om uddannelse, økonomisk forb
           if ( filterElement == "uddanelsesvalg" || element.tema.includes(parseInt(filterElement))){
           let klon = temp.cloneNode(true).content;
           klon.querySelector("h2").innerHTML = element.title.rendered;
-          klon.querySelector("img").src = element.billede.guid;
+          klon.querySelector("img").src = element.loop_billede.guid;
           klon.querySelector(".kortbeskrivelse").innerHTML = element.kortbeskrivelse;
           klon.querySelector(".klassetrin").innerHTML = "👨‍👦‍👦: " + element.klassetrin;
           klon.querySelector(".fag").innerHTML = "📖: " + element.fag;
