@@ -39,6 +39,10 @@ get_header();
       <img class="info-box" src="" alt="" />
       </div>
       <p class="beskrivelse2"></p>
+	  <p class="beskrivelse3"></p>
+	  <p class="beskrivelse4"></p>
+	  <p class="beskrivelse5"></p>
+
 
 	  <button class="book-knap">Book nu</button>
 
@@ -71,6 +75,9 @@ function visElementer() {
   document.querySelector(".pic").src = element.billede.guid;
   document.querySelector(".beskrivelse").innerHTML = element.beskrivelse;
   document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse2;
+   document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse3;
+    document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse4;
+	 document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse5;
   document.querySelector(".info-box").src = element.infobox.guid;;
 }
 
