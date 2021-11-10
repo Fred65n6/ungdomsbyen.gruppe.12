@@ -34,14 +34,13 @@ get_header();
 	<article id="kursus">
       <img class="pic" src="" alt="" />
 	  <h2 class="titel"> </h2>
-      <div class="kursus-container">
-      <p class="beskrivelse"></p>
+      <!-- <div class="kursus-container"> -->
       <img class="info-box" src="" alt="" />
-      </div>
+	  <p class="beskrivelse"></p>
+	  <img class="billede2" src="" alt="" />
+      <!-- </div> -->
       <p class="beskrivelse2"></p>
-	  <p class="beskrivelse3"></p>
-	  <p class="beskrivelse4"></p>
-	  <p class="beskrivelse5"></p>
+	  <div class="video" ><a href="http://"></a></div>
 	  <button class="book-knap">Book nu</button>
     </article>
 
@@ -70,11 +69,10 @@ function visElementer() {
   document.querySelector(".titel").innerHTML = element.title.rendered;
   document.querySelector(".pic").src = element.billede.guid;
   document.querySelector(".beskrivelse").innerHTML = element.beskrivelse;
+  document.querySelector(".billede2").src = element.billede2.guid;
   document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse2;
-  document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse3;
-  document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse4;
-  document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse5;
-  document.querySelector(".info-box").src = element.infobox.guid;;
+  document.querySelector(".info-box").src = element.infobox.guid;
+  document.querySelector(".video").innerHTML = element.beskrivelse2;
 }
 
 getJson();
