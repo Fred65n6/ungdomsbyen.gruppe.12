@@ -40,7 +40,7 @@ get_header();
 	  <img class="billede2" src="" alt="" />
       <!-- </div> -->
       <p class="beskrivelse2"></p>
-	  <div class="video" ><a href="http://"></a></div>
+	  <img class="video" src="" alt=""/>
 	  <button class="book-knap">Book nu</button>
     </article>
 
@@ -72,7 +72,7 @@ function visElementer() {
   document.querySelector(".billede2").src = element.billede2.guid;
   document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse2;
   document.querySelector(".info-box").src = element.infobox.guid;
-  document.querySelector(".video").innerHTML = element.beskrivelse2;
+  document.querySelector(".video").innerHTML = element.video.guid;
 }
 
 getJson();
