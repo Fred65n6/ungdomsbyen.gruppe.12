@@ -44,6 +44,7 @@ button.filter {
 .retcontainer {
   gap: 10px;
   cursor: pointer;
+  background-color: #e86337bd;
 }
 
 .klassetrin {

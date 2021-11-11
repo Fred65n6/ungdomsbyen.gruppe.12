@@ -32,20 +32,38 @@ get_header();
 <main class="site-main">
 
 	<article id="kursus">
-      <img class="pic" src="" alt="" />
-	  <h2 class="titel"> </h2>
-      <!-- <div class="kursus-container"> -->
-      <img class="info-box" src="" alt="" />
-	  <p class="beskrivelse"></p>
+
+
+	<div class="splash">
+      <img class="billede" src="" alt="" />
+	  <h2 class="titel"></h2>
+	  </div>
+
+	  <h2 class="overskrift1"></h2>
+
+	  <div class="single-infobox-grid">
+      <img class="infobox1" src="" alt="" />
+	  <img class="infobox2" src="" alt="" />
+	  </div>
+
+	  <p class="beskrivelse1"></p>
+
+	  <p class="overskrift1"></p>
+	  <div class="billede-grid">
 	  <img class="billede2" src="" alt="" />
-      <!-- </div> -->
+	  <img class="billede3" src="" alt="" />
+	  </div>
+
+      <div class="video-grid">
       <p class="beskrivelse2"></p>
 	  <img class="video" src="" alt=""/>
+	  </div>
+
 	  <button class="book-knap">Book nu</button>
+	  
     </article>
 
 
-   
 <div class="tilbageknap"><a href="https://skuret.eu/kea/ungdomsbyen/kurser/" class="tilbage">← Tilbage</a></div>
 
 </main>
@@ -67,11 +85,15 @@ async function getJson() {
 function visElementer() {
   console.log(element.billede.guid);
   document.querySelector(".titel").innerHTML = element.title.rendered;
-  document.querySelector(".pic").src = element.billede.guid;
-  document.querySelector(".beskrivelse").innerHTML = element.beskrivelse;
+  document.querySelector(".billede").src = element.billede.guid;
+  document.querySelector(".overskrift1").innerHTML = element.overskrift1;
+  document.querySelector(".infobox1").src = element.infobox1.guid;
+  document.querySelector(".infobox2").src = element.infobox2.guid;
+  document.querySelector(".beskrivelse1").innerHTML = element.beskrivelse1;
+  document.querySelector(".overskrift1").innerHTML = element.overskrift1;
   document.querySelector(".billede2").src = element.billede2.guid;
+  document.querySelector(".billede3").src = element.billede3.guid;
   document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse2;
-  document.querySelector(".info-box").src = element.infobox.guid;
   document.querySelector(".video").innerHTML = element.video.guid;
 }
 

@@ -54,7 +54,7 @@ get_header();
 </div>
 
 <div id="dropdown" class="dropdown">
-  <button class="dropbtn" class="filter">Målgruppe ▼</button>
+  <button class="dropbtn" class="valgt">Målgruppe ▼</button>
   <div class="dropdown-content">
   <nav id="filtrering">
   </nav>
@@ -75,6 +75,122 @@ get_header();
 
 </div>
 <script>
+
+ 
+
+  //    let elementer = [];
+  //       let categories = [];
+  //       let temaer = [];
+  //       const liste = document.querySelector(".elementcontainer");
+  //       const skabelon = document.querySelector("template");
+  //       let filterRet = "alle";
+  //       let filterIndhold = "alle";
+  //       document.addEventListener("DOMContentLoaded", start);
+        
+  //       function start() {
+            
+
+  //           console.log(url);
+            
+  //           getJson();
+    
+  //       }
+
+       
+
+
+  //             async function getJson() {
+  //           //hent alle custom posttypes retter
+  //           const url = "skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/kurser?per_page=100";
+  //           //hent basis categories
+  //           const catUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/categories?per_page=100";
+  //            //hent custom category: indhold
+  //           const contUrl = "https://skuret.eu/kea/ungdomsbyen/wp-json/wp/v2/tema?per_page=100";
+  //           let response = await fetch(url);
+  //           let catResponse = await fetch(catUrl);
+  //           let contResponse = await fetch(contUrl);
+  //           retter = await response.json();
+  //           categories = await catResponse.json();
+  //           indhold = await contResponse.json();
+  //           visRetter();
+  //           opretKnapper();
+  //       }
+
+  //      <
+
+  //             function opretKnapper(){
+            
+  //           categories.forEach(cat=>{
+  //              //console.log(cat.id);
+  //               if(cat.name != "Uncategorized"){
+  //               document.querySelector("#filtrering").innerHTML += `<button class="filter" data-ret="${cat.id}">${cat.name}</button>`
+  //               }
+  //           })
+  //             indhold.forEach(cont=>{
+  //              //console.log(cont.id);
+  //               document.querySelector("#indhold-filtrering").innerHTML += `<button class="filter" data-cont="${cont.id}">${cont.name}</button>`
+             
+  //           })
+  //           addEventListenersToButtons();
+  //       }
+
+  //            function visRetter() {
+  //           console.log(retter);
+  //           liste.innerHTML = "";
+  //           console.log({filterRet});
+  //           console.log({filterIndhold});
+  //           retter.forEach(ret => {
+  //               //tjek filterRet og filterIndhold til filtrering
+  //               if ((filterRet == "alle"  || ret.categories.includes(parseInt(filterRet))) && (filterIndhold == "alle"  || ret.indhold.includes(parseInt(filterIndhold)))) {
+  //                   const klon = skabelon.cloneNode(true).content;
+  //                    klon.querySelector("h2").innerHTML = element.title.rendered;
+  //         klon.querySelector("img").src = element.loop_billede.guid;
+  //         klon.querySelector(".kortbeskrivelse").innerHTML = element.kortbeskrivelse;
+  //         klon.querySelector(".klassetrin").innerHTML = "👨‍👦‍👦: " + element.klassetrin;
+  //         klon.querySelector(".fag").innerHTML = "📖: " + element.fag;
+  //                   klon.querySelector("article").addEventListener("click", () => {
+  //                       location.href = ret.link;
+  //                   })
+  //                   liste.appendChild(klon);
+  //               }
+  //           })
+
+  //       }
+
+  //        function addEventListenersToButtons() {
+  //           document.querySelectorAll("#filtrering button").forEach(elm => {
+  //               elm.addEventListener("click", filtrering);
+  //           })
+  //            document.querySelectorAll("#indhold-filtrering button").forEach(elm => {
+  //               elm.addEventListener("click", filtreringIndhold);
+  //           })
+  //       }
+        
+  //       function filtrering() {
+  //           filterRet = this.dataset.ret;
+  //           document.querySelector("h1").textContent = this.textContent;
+  //           //fjern .valgt fra alle
+  //           document.querySelectorAll("#filtrering .filter").forEach(elm => {
+  //               elm.classList.remove("valgt");
+  //           });
+          
+  //           //tilføj .valgt til den valgte
+  //           this.classList.add("valgt");
+  //           visRetter();
+  //       }
+  //        function filtreringIndhold() {
+  //           filterIndhold = this.dataset.cont;
+  //           document.querySelector("h1").textContent = this.textContent;
+  //            //fjern .valgt fra alle
+  //           document.querySelectorAll("#indhold-filtrering .filter").forEach(elm => {
+  //               elm.classList.remove("valgt");
+  //           });
+  //           //tilføj .valgt til den valgte
+  //           this.classList.add("valgt");
+  //           visRetter();
+  //       }
+
+
 
       let elementer;
       let categories;
@@ -133,11 +249,12 @@ get_header();
         console.log(filterElement);
 
         visElementer();
+
       }
 
       function filtrering2() {
       filterElement2 = this.dataset.element;
-      console.log(filterElement);
+      console.log(filterElement2);
 
       visElementer2();
       }
@@ -168,7 +285,6 @@ get_header();
         container.innerHTML = "";
         elementer.forEach(element => {
         if ( filterElement == "alle" || element.tema.includes(parseInt(filterElement))){
-
           let klon = temp.cloneNode(true).content;
           klon.querySelector("h2").innerHTML = element.title.rendered;
           klon.querySelector("img").src = element.loop_billede.guid;
@@ -180,6 +296,7 @@ get_header();
            }
           })
         }
+
 getJson();
 
 
