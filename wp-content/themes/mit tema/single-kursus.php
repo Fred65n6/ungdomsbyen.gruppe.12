@@ -40,7 +40,7 @@ get_header();
 	  </div>
 
 	  <h2 class="overskrift1"></h2>
-
+	  <button class="book-knap">Book nu</button>
 	  <div class="single-infobox-grid">
       <img class="infobox1" src="" alt="" />
 	  <img class="infobox2" src="" alt="" />
@@ -59,7 +59,7 @@ get_header();
 	  <img class="video" src="" alt=""/>
 	  </div>
 
-	  <button class="book-knap">Book nu</button>
+	  
 	  
     </article>
 
