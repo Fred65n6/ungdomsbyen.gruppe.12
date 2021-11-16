@@ -53,6 +53,7 @@ get_header();
 <p>Se vores store udvalg af forskellige kurser her, og gå ind og læs nærmere om hvert kursus.</p>
 </div>
 
+<div class="menuer">
 <div id="dropdown" class="dropdown">
   <button class="dropbtn" class="valgt">Målgruppe ▼</button>
   <div class="dropdown-content">
@@ -67,6 +68,7 @@ get_header();
   <nav id="filtrering2">
   </nav>
   </div>
+</div>
 </div>
 
 <section class="elementcontainer"></section>
