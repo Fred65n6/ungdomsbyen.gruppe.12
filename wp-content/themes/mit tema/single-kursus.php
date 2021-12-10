@@ -39,8 +39,11 @@ get_header();
 	  <h2 class="titel"></h2>
 	  </div>
 
-	  <h2 class="overskrift1"></h2>
+	  
+	  <div class="button-grid">
 	  <button class="book-knap">Book nu</button>
+	  </div>
+	  <h2 class="overskrift1"></h2>
 	  <div class="single-infobox-grid">
       <img class="infobox1" src="" alt="" />
 	  <img class="infobox2" src="" alt="" />
@@ -94,7 +97,7 @@ function visElementer() {
   document.querySelector(".billede2").src = element.billede2.guid;
   document.querySelector(".billede3").src = element.billede3.guid;
   document.querySelector(".beskrivelse2").innerHTML = element.beskrivelse2;
-  document.querySelector(".video").innerHTML = element.video.guid;
+  document.querySelector(".video").src = element.video.guid;
 }
 
 getJson();
